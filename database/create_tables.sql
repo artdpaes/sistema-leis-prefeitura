@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS leis (
+    id SERIAL PRIMARY KEY,
+    numero_lei INTEGER UNIQUE NOT NULL,
+    titulo TEXT NOT NULL,
+    descricao TEXT,
+    data_lei DATE NOT NULL,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

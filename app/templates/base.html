@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sistema de Leis</title></head>
+<body>
+<h1>Prefeitura de Agudos - Cadastro de Leis</h1>
+
+<div>
+    {% if session.usuario_id %}
+        Logado como: {{ session.usuario_nome }} |
+        <a href="{{ url_for('auth.logout') }}">Sair</a>
+    {% else %}
+        <a href="{{ url_for('auth.login') }}">Login</a>
+    {% endif %}
+</div>
+
+<hr>
+{% block conteudo %}{% endblock %}
+</body>
+</html>
