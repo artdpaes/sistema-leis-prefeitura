@@ -1,14 +1,21 @@
 {% extends "base.html" %}
+
 {% block conteudo %}
-<form method="post">
-Número da Lei:<br>
-<input type="text" value="{{ numero_lei }}" readonly><br><br>
-Título:<br>
-<input type="text" name="titulo" required><br><br>
-Descrição:<br>
-<textarea name="descricao"></textarea><br><br>
-Data da Lei:<br>
-<input type="date" name="data_lei" required><br><br>
-<button type="submit">Salvar</button>
+<h2 class="card-title">Nova lei</h2>
+
+<form method="post" novalidate>
+    <label>Número da Lei</label>
+    <input type="text" value="{{ numero_lei }}" readonly>
+
+    <label for="titulo">Título</label>
+    <input id="titulo" type="text" name="titulo" required placeholder="Ex.: Lei de Diretrizes Orçamentárias">
+
+    <label for="descricao">Descrição (opcional)</label>
+    <textarea id="descricao" name="descricao" placeholder="Resumo da lei"></textarea>
+
+    <label for="data_lei">Data da Lei</label>
+    <input id="data_lei" type="date" name="data_lei" required>
+
+    <button type="submit">Salvar lei</button>
 </form>
 {% endblock %}
